@@ -1,0 +1,6 @@
+framework module Pods_Recipes_App_PoMac_Task {
+  umbrella header "Pods-Recipes App-PoMac Task-umbrella.h"
+
+  export *
+  module * { export * }
+}
