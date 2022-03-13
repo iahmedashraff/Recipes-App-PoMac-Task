@@ -9,32 +9,28 @@ import Foundation
 import Alamofire
 
 class HomePresenter{
-    
-    func getCountries() {
+    var recipes = [RecipeModel]()
+
+    func getRecipces(success:(()->())?, error:((String)->())?) {
         AF.request("https://api.npoint.io/43427003d33f1f6b51cc").response { response in
-            if response.response?.statusCode == 200 {
-                do {
-                    // make sure this JSON is in the format we expect
-                    if let json = try JSONSerialization.jsonObject(with: response.data!, options: []) as? [String: Any] {
-                        // try to read out a string array
-                        let jsondata = json["data"] as? [String: Any]
-                        self.list = jsondata?["countries"] as? [[String: Any]] ?? []
-                        self.delegate?.successLoad()
+            switch response.result{
+            case .success(let data):
+                do{
+                    let jsonRecipes = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: Any]]
+                    for item in jsonRecipes! as [[String:Any]] {
+                        let recipesModel = RecipeModel(recipeAPI: item)
+                        self.recipes.append(recipesModel)
+                        
                     }
-                } catch let err as NSError {
-                    print("Failed to load: \(err.localizedDescription)")
-                    self.delegate?.errorLoad(error: err.localizedDescription)
+                    success?()
+                    
+                }catch{
+                    
                 }
-
-            }else if response.response?.statusCode == 404 {
-                self.delegate?.errorLoad(error: "ss error")
-            }else {
-                //internet error
-                self.delegate?.errorLoad(error: "net error")
-
-
+            case .failure(let err):
+                print(err.localizedDescription)
+                error?(err.localizedDescription)
             }
-            
         }
     }
 

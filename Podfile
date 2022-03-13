@@ -7,4 +7,5 @@ target 'Recipes App-PoMac Task' do
   # Pods for Recipes App-PoMac Task
 	pod 'IQKeyboardManagerSwift'
 	pod 'Alamofire'
+  pod 'Kingfisher'
 end

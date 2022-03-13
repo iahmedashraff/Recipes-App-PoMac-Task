@@ -1,20 +1,24 @@
 PODS:
   - Alamofire (5.4.4)
   - IQKeyboardManagerSwift (6.5.9)
+  - Kingfisher (7.1.1)
 
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManagerSwift
+  - Kingfisher
 
 SPEC REPOS:
   trunk:
     - Alamofire
     - IQKeyboardManagerSwift
+    - Kingfisher
 
 SPEC CHECKSUMS:
   Alamofire: f3b09a368f1582ab751b3fff5460276e0d2cf5c9
   IQKeyboardManagerSwift: 6e839c575c4aa1078d58a596e41244e77abe918f
+  Kingfisher: f738f9c4a3415823b8e2985d10aa2d6a9f37bc4d
 
-PODFILE CHECKSUM: ef5491a3d56da80696f8dfe691dad3daa3dac723
+PODFILE CHECKSUM: 26b11dd6611bb88fed551eece39a5a61834f8c28
 
 COCOAPODS: 1.11.2
