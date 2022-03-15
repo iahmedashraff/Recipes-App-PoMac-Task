@@ -36,6 +36,7 @@
 		090AA2F8B420E729C0397958 /* Pods-Recipes App-PoMac Task.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes App-PoMac Task.release.xcconfig"; path = "Target Support Files/Pods-Recipes App-PoMac Task/Pods-Recipes App-PoMac Task.release.xcconfig"; sourceTree = "<group>"; };
 		20FEBB6C07EBE5D29CD7AA73 /* Pods-Recipes App-PoMac Task.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Recipes App-PoMac Task.debug.xcconfig"; path = "Target Support Files/Pods-Recipes App-PoMac Task/Pods-Recipes App-PoMac Task.debug.xcconfig"; sourceTree = "<group>"; };
 		5B028D4127E09F3D00BA3F15 /* DetalisVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetalisVC.swift; sourceTree = "<group>"; };
+		5B169D2427E10EB100F3BAAE /* ReadMe.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = ReadMe.md; sourceTree = "<group>"; };
 		5B3AE93827DE7CFB009F7E1A /* ConvertColorToHexColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConvertColorToHexColor.swift; sourceTree = "<group>"; };
 		5B3AE93F27DE8E63009F7E1A /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		5B3AE94127DE90A9009F7E1A /* Kingfisher+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Kingfisher+Extension.swift"; sourceTree = "<group>"; };
@@ -111,6 +112,7 @@
 		5B7148CC27DBF3790089B0E6 = {
 			isa = PBXGroup;
 			children = (
+				5B169D2427E10EB100F3BAAE /* ReadMe.md */,
 				5B7148D727DBF3790089B0E6 /* Recipes App-PoMac Task */,
 				5B7148D627DBF3790089B0E6 /* Products */,
 				C17CB2F5ED0A97E0C43F0055 /* Pods */,
