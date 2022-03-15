@@ -9,5 +9,4 @@ target 'Recipes App-PoMac Task' do
 	pod 'Alamofire'
  	pod 'Kingfisher'
 	pod 'SwiftMessages'
-  pod 'NVActivityIndicatorView'
 end
