@@ -7,10 +7,11 @@
 
 import Foundation
 import Alamofire
+import UIKit
 
 class HomePresenter{
     var recipes = [RecipeModel]()
-
+    var ingredients = [RecipeModel]()
     func getRecipces(success:(()->())?, error:((String)->())?) {
         AF.request("https://api.npoint.io/43427003d33f1f6b51cc").response { response in
             switch response.result{
@@ -19,8 +20,8 @@ class HomePresenter{
                     let jsonRecipes = try JSONSerialization.jsonObject(with: data!, options: []) as? [[String: Any]]
                     for item in jsonRecipes! as [[String:Any]] {
                         let recipesModel = RecipeModel(recipeAPI: item)
-                        self.recipes.append(recipesModel)
                         
+                        self.recipes.append(recipesModel)
                     }
                     success?()
                     
@@ -33,5 +34,6 @@ class HomePresenter{
             }
         }
     }
+
 
 }

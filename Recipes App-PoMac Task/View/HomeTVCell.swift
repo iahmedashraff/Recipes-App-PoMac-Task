@@ -8,7 +8,10 @@
 import UIKit
 
 class HomeTVCell: UITableViewCell {
-    
+
+    //MARK: -Constanse
+
+
     //MARK: -OutLets
     @IBOutlet weak var backView: UIView!{
         didSet{
@@ -21,14 +24,18 @@ class HomeTVCell: UITableViewCell {
             backView.layer.shadowRadius = 2.0
         }
     }
-    @IBOutlet weak var recipesImage: UIImageView!
+    @IBOutlet weak var recipesImage: UIImageView!{
+        didSet{
+            recipesImage.layer.cornerRadius = 10
+        }
+    }
     @IBOutlet weak var favoriteBtn: UIButton!
     @IBOutlet weak var recipesTitleLbl: UILabel!
     @IBOutlet weak var recipesDescriptionLbl: UILabel!
     
+    
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -36,5 +43,13 @@ class HomeTVCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
+    @IBAction func favoriteBtnPressed(_ sender: UIButton) {
+
+        }
+    
+    
+    //MARK: -IBActions
+
 
 }
+

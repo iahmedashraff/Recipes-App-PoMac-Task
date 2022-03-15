@@ -1,8 +1,8 @@
 //
-//  PasswordTextNib.swift
+//  textFeildNib.swift
 //  Recipes App-PoMac Task
 //
-//  Created by Ahmed Ashraf on 13/03/2022.
+//  Created by Ahmed Ashraf on 14/03/2022.
 //
 
 import Foundation
@@ -10,7 +10,8 @@ import UIKit
 
 
 @IBDesignable
-class PasswordTextNib: UIView, UITextFieldDelegate{
+class textFeildNib: UIView, UITextFieldDelegate{
+    
     //MARK: -Constanse
     var placeHolder: String? {
         didSet {
@@ -32,25 +33,37 @@ class PasswordTextNib: UIView, UITextFieldDelegate{
    }
     var isSecure: Bool? {
        didSet {
-           self.textField.isSecureTextEntry = true
+           self.textField.isSecureTextEntry = isSecure ?? false
        }
    }
-   
+    var isTextHidden: Bool?{
+        didSet{
+            self.textField.isHidden = true
+        }
+    }
+  
     
+   
     //MARK: -Outlets
     @IBOutlet var contentView: UIView!
-    @IBOutlet weak var textField: UITextField!
+    
+    @IBOutlet weak var textField: UITextField!{
+        didSet{
+            textField.layer.borderWidth = 1
+        }
+    }
     @IBOutlet weak var lblPlaceHolder: UILabel!{
         didSet{
             self.lblPlaceHolder.isHidden = true
         }
     }
-
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         textField.delegate = self
         textFieldDidBeginEditing(textField)
         textFieldDidEndEditing(textField)
+        
     }
     override init(frame: CGRect) {
             super.init(frame: frame)
@@ -61,19 +74,17 @@ class PasswordTextNib: UIView, UITextFieldDelegate{
             commit()
         }
     
-    //MARK: -IBActions
-    @IBAction func changedTextFiledValueForText(_ sender: UITextField) {
+    //MARK: -IBACtions
+
+    @IBAction func changedTextFiledValueForText(_ sender: Any) {
         text = textField.text
     }
-    @IBAction func showPassword(_ sender: UIButton) {
-        textField.isSecureTextEntry = !textField.isSecureTextEntry
-    }
     
-    //MARK: -HelperFunctions
+    //MARK: -Helper Function
     func textFieldDidBeginEditing(_ textField: UITextField) {
             textField.layer.cornerRadius = 5
-            textField.layer.borderColor = UIColor(hexString: "#413D7D").cgColor
-            textField.layer.borderWidth = 1.0
+            
+            textField.layer.borderWidth = 2.0
         isShowPlaceHolder(true)
         }
 
@@ -82,6 +93,7 @@ class PasswordTextNib: UIView, UITextFieldDelegate{
             textField.layer.borderWidth = 0.0
         isShowPlaceHolder(false)
         }
+
                 // For Making Animation to placeholder
     func isShowPlaceHolder(_ isShow: Bool) {
         UIView.animate(withDuration: 0.5) {
@@ -89,11 +101,12 @@ class PasswordTextNib: UIView, UITextFieldDelegate{
         } completion: { com in
         }
     }
+
     func commit(){
-          Bundle.main.loadNibNamed("PasswordTextNib", owner: self, options: nil)
+          Bundle.main.loadNibNamed("textFeildNib", owner: self, options: nil)
           addSubview(contentView)
-            contentView.frame = self.bounds
-            contentView.autoresizingMask  = [.flexibleHeight,.flexibleWidth]
+        contentView.frame = self.bounds
+        contentView.autoresizingMask  = [.flexibleHeight,.flexibleWidth]
        
       }
 }

@@ -6,11 +6,9 @@
 //
 
 import UIKit
-
 class HomeVC: UIViewController {
-    
-    var presenter = HomePresenter()
 
+    var presenter = HomePresenter()
     //MARK: -OutLets
     @IBOutlet weak var tableView: UITableView!
     
@@ -35,12 +33,13 @@ class HomeVC: UIViewController {
     func setupUI(){
         tableView.tableFooterView = UIView()
     }
-    func showPopup(msg: String) {
-        let myalert = UIAlertController(title: "Error", message: msg, preferredStyle: UIAlertController.Style.alert)
-        myalert.addAction(UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction!) in
-            print("Selected")
-        })
-        self.present(myalert, animated: true)
+//    func showPopup(msg: String) {
+//        let myalert = UIAlertController(title: "Error", message: msg, preferredStyle: UIAlertController.Style.alert)
+//        myalert.addAction(UIAlertAction(title: "Ok", style: .default) { (action:UIAlertAction!) in
+//            print("Selected")
+//        })
+//        self.present(myalert, animated: true)
+//
+//    }
 
-    }
 }
